@@ -1,0 +1,81 @@
+Documentação do Dynamic-Tabs-Framework
+
+
+
+Visão Geral
+
+    O Dynamic-Tabs-Framework é um módulo JavaScript que facilita a criação e gerenciamento dinâmico de abas em uma interface web. 
+    Ele permite carregar conteúdo dinamicamente, reorganizar abas por arrastar e soltar, e fechar abas com facilidade.
+
+
+
+Dependências
+
+    Inclua as seguintes dependências no seu projeto:
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+
+
+
+Script
+
+    Inclua os seguintes scripts e folhas de estilo no seu projeto:
+
+    <script src="windows/app/public/js/windows.js"></script>
+    <link rel="stylesheet" href="windows/app/public/css/window.css">
+
+
+
+Estrutura Básica do HTML
+
+    O Dynamic-Tabs-Framework exige uma estrutura específica de HTML. Aqui está um exemplo da estrutura mínima necessária:
+    
+    <div class="Nav_Container_Window">
+        <div class="Nav-Window">
+            <ul class="Ul-Window nav-tabs" id="tab-list" role="tablist">
+                <!--Abas serão adicionadas dinamicamente aqui-->
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tab-content" id="tabContent">
+        <div class="tab-pane fade show active" id="content-whatsapp" role="tabpanel" aria-labelledby="tab-whatsapp">
+            <!--Conteúdo da aba inicial-->
+        </div>
+    </div>
+    
+
+
+Guia de Uso:
+
+    Adicionando Eventos de Clique para Criar Abas:
+
+        Use o método adicionarEventoDeClique para associar botões a eventos que criam novas abas. Este método recebe quatro parâmetros:
+
+
+            botaoId: O ID do botão que irá disparar a criação da nova aba.
+
+            imgSrc: O caminho da imagem/ícone que será exibida na aba.
+
+            nomeAba: O nome da aba.
+
+            conteudoPath: O caminho do conteúdo que será carregado na aba.
+
+
+            TabManager.adicionarEventoDeClique('t01', '../windows/app/files/ico/whatsapp.png', 'Aba teste 01', 'pages/test1.html');
+
+
+Exemplo:
+
+    Existe uma pasta de exemplo em html no projeto.
+
+
+
+
+Finalização
+
+    Este é um projeto que está no início, desenvolvido para atender uma necessidade específica em um dos meus desenvolvimentos. Achei interessante compartilhá-lo aqui. 
+    Estou aberto a melhorias no código :)
+
