@@ -48,7 +48,7 @@
                         </div>
                         <div class="container_close_window cnt-generic-win">
                             <div class="nav-close-window">
-                                <div class="window-btn-close closeTab">x</div>
+                                <div class="window-btn-close closeTab"></div>
                             </div>
                         </div>
                         <div class="container_limit_winodw-r">
@@ -132,8 +132,17 @@
                     atualizarEstadoAba(tabId);
                 }
             });
-
             initSortable();
+
+            const tabList = document.getElementById('tab-list');
+            tabList.addEventListener('wheel', function(event) {
+                if (event.deltaY > 0) {
+                    this.scrollLeft += 30; 
+                } else {
+                    this.scrollLeft -= 30;
+                }
+                event.preventDefault();
+            });
         });
     }
 
@@ -143,7 +152,4 @@
     };
 })(window);
 
-
 TabManager.init();
-
-

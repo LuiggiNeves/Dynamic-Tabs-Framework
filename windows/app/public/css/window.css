@@ -38,7 +38,6 @@
 }
 
 .nav-tabs .nav-link:hover {
-    border: none;
     color: inherit;
     background-color: none;
 }
@@ -96,6 +95,8 @@
     width: 100%;
     height: 100%;
     background-color: var(--nav-tab-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .Ul-Window{
@@ -111,12 +112,30 @@
     align-items: center;
 }
 
+.Ul-Window::-webkit-scrollbar {
+    height: 6px; 
+}
+
+.Ul-Window::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 10px; 
+}
+
+.Ul-Window::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+.Ul-Window::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+}
+
 .Ul-Window li{
     cursor: pointer;
     margin-left: 5px;
     margin-right: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease-in-out;
 }
-
 .container_nav_item_window{
     min-width: var(--tab-item-w-min); 
     max-width: var(--tab-item-w-max);
@@ -174,6 +193,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 5px;
+    color: #fff;
+}
+
+.Ul-Window li:hover .nav-text-window{
+    color: black;
+}
+
+.nav-link.active .nav-text-window {
+    color: black;
+    border: transparent;
 }
 
 .container_close_window{
@@ -201,7 +230,7 @@
 .nav-close-window:hover .window-btn-close::before,
 .nav-close-window:hover .window-btn-close::after {
     background-color: #fff;
-    width: 1px;
+
 }
 
 .nav-close-window p {
